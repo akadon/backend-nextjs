@@ -1,6 +1,6 @@
 import { createClient } from 'redis';
 
-const redisUrl = 'redis://default:vUr1SfWS4VOYcKkGOdacYjjTEeJ22Wbz@redis-13230.c293.eu-central-1-1.ec2.cloud.redislabs.com:13230';
+const redisUrl = process.env.REDIS_LOCAL_URI as string; 
 
 const redisClient = createClient({
   url: redisUrl,

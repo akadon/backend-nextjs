@@ -2,10 +2,10 @@
 import knex from "knex"; 
 
 // export const dbconnect = mysql.createConnection({
-//     host     : 'akax.lima-ftp.de',
-//     user     : 'USER340568_akado',
-//     password : 'qwertvbnmasdf',
-//     database : 'db_340568_10'
+//     host     : '',
+//     user     : '',
+//     password : '',
+//     database : ''
 // });
 
 
@@ -23,10 +23,10 @@ import knex from "knex";
 export const dbconnect = knex({
   client: 'mysql2',
   connection: {
-      host     : 'akax.lima-ftp.de',
-      user     : 'USER340568_akado',
-      password : 'qwertvbnmasdf',
-      database : 'db_340568_10'
+      host     : process.env.sql_LOCAL_URI as string,
+      user     : process.env.sqluser,
+      password : process.env.sqlpassword,
+      database : process.env.sqldatabase
   },
 });
 
